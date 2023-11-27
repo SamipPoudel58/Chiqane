@@ -3,25 +3,54 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --c-primary: #da2f20;
+  --c-background: #09091b;
+  --c-backround-light: #15151e;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  background: var(--c-backround-light);
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    var(--c-backround-light),
+    var(--c-background)
+  );
+  min-height: 100vh;
+}
+
+.trackSvg svg {
+  height: 260px;
+  width: 260px;
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(100%, 10%);
+  }
+
+  40% {
+    transform: scale(50%, 50%);
+  }
+
+  80% {
+    transform: scale(110%, 110%);
+  }
+
+  100% {
+    transform: scale(100%, 100%);
+  }
+}
+
+svg .st0 {
+  stroke: white;
+}
+
+svg .st1,
+svg .st2,
+svg .st3 {
+  stroke: transparent;
 }
