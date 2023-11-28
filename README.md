@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1><img align="center" src='public/images/favicon.png' height='50' alt='logo' />  Chiqane | Formula 1 Track Trivia</h1>
 
-## Getting Started
+ <img width="1458" alt="image" src="https://github.com/SamipPoudel58/Chiqane/assets/59493809/013dd73b-04a7-4577-bcd6-3aaeaa3927e7">
 
-First, run the development server:
+ ## ⚙️ Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- NextJS 13
+- TypeScript
+- TailwindCSS
+  
+Thanks to F1Laps for their amazing track vectors. You can find them [here.](https://github.com/f1laps/f1-track-vectors)
+
+## 🚀 Local Development
+
+Run the project in your machine locally.
+
+### Step 1: Clone the repository
+
+Clone the repo locally using:
+
+```sh
+git clone https://github.com/SamipPoudel58/Chiqane.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Step 2: Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install dependencies in the root folder
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```sh
+cd Chiqane
+npm install
+```
 
-## Learn More
+### Step 3: Run the server
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
