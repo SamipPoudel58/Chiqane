@@ -6,11 +6,8 @@ import Header from '@/components/header';
 const inter = Teko({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Chiqane | Guess the track layout',
-  description: 'Guess the F1 track layout',
-  openGraph: {
-    images: '/images/chiqane-og.png',
-  },
+  title: 'Chiqane | Guess the F1 track layouts',
+  description: 'Guess the F1 track layouts',
 };
 
 export default function RootLayout({
