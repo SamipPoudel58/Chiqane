@@ -251,7 +251,7 @@ const TrackQuiz = () => {
           <div className="w-full xl:w-1/2 px-4 sm:px-8 xl:px-0">
             {gameOver ? (
               <div className="flex flex-col items-center xl:items-start">
-                <h1 className="text-white text-5xl sm:text-6xl font-bold md:mb-8">
+                <h1 className="text-white text-4xl sm:text-6xl font-bold md:mb-8">
                   And... There&apos;s the
                   <br /> Chequered Flag! 🏁
                   <br />
@@ -259,7 +259,7 @@ const TrackQuiz = () => {
                 </h1>
                 <button
                   onClick={resetGame}
-                  className="group flex gap-x-4 items-center justify-center text-white hover:text-background hover:bg-primary text-3xl md:text-4xl w-full max-w-[500px] mt-8 md:mt-12 border-2 border-primary rounded pt-5 pb-4 px-6"
+                  className="group flex gap-x-4 items-center justify-center text-white hover:text-background hover:bg-primary text-2xl sm:text-3xl md:text-4xl w-full max-w-[300px] md:max-w-[500px] mt-8 md:mt-12 border-2 border-primary rounded pt-5 pb-4 px-6"
                 >
                   <span>Another Flying Lap!</span>
                   <div>
