@@ -8,6 +8,7 @@ const inter = Teko({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Chiqane | Guess the F1 track layouts',
   description: 'Guess the F1 track layouts',
+  metadataBase: new URL('https://chiqane.vercel.app/'),
 };
 
 export default function RootLayout({
