@@ -7,7 +7,7 @@ export default function Home() {
       <div className="flex flex-col-reverse xl:flex-row items-center gap-x-16 pt-8 lg:pt-16">
         <TrackWrapper url="https://raw.githubusercontent.com/f1laps/f1-track-vectors/main/f1_2020/hungary.svg" />
 
-        <div className="px-8 xl:px-0">
+        <div className="px-4 sm:px-8 xl:px-0">
           <div className="flex gap-x-4 leading-[0] items-center ">
             <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-bold">
               Guess These

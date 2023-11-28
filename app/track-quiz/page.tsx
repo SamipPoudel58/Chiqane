@@ -228,7 +228,7 @@ const TrackQuiz = () => {
   return (
     questions.length > 0 && (
       <main className="max-w-[1200px] mx-auto">
-        <div className="flex flex-col xl:flex-row items-center gap-x-16 gap-y-6 lg:pt-16">
+        <div className="flex flex-col xl:flex-row items-center gap-x-16 sm:gap-y-6 lg:pt-16">
           {gameOver ? (
             <div className="flex flex-col items-center justify-center bg-[url(/images/grid.png)] bg-center bg-contain bg-no-repeat h-[350px] sm:h-[500px] w-full sm:w-[500px]">
               <h1 className="text-white text-[150px] sm:text-[200px] leading-none font-bold mt-8 sm:my-8">
@@ -294,7 +294,7 @@ const TrackQuiz = () => {
                   Guess The Track!
                 </h1>
 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-2 sm:gap-4">
                   {activeQuestion.options.map((opt, idx) => (
                     <button
                       onClick={() => submitAnswer(opt)}
@@ -305,7 +305,7 @@ const TrackQuiz = () => {
                             ? 'border-emerald-500 text-emerald-500'
                             : 'border-rose-600 text-rose-600'
                           : 'border-slate-100 hover:border-slate-100/70 text-slate-100 hover:text-slate-100/70'
-                      } relative border-2 rounded text-2xl sm:text-3xl py-4 w-[47.8%] sm:w-[48%]`}
+                      } relative border-2 rounded text-2xl sm:text-3xl py-4 w-[48%] sm:w-[48%]`}
                     >
                       {opt}
 
