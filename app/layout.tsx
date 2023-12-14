@@ -8,7 +8,18 @@ const inter = Teko({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Chiqane | Guess the F1 track layouts',
   description: 'Guess the F1 track layouts',
-  metadataBase: new URL('https://chiqane.vercel.app/'),
+  metadataBase: new URL('https://chiqane.vercel.app'),
+  openGraph: {
+    title: 'Chiqane | Guess the F1 track layouts',
+    description: 'Chiqane | Guess the F1 track layouts',
+    url: 'https://chiqane.vercel.app',
+    siteName: 'Chiqane',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Chiqane',
+    card: 'summary_large_image',
+  },
 };
 
 export default function RootLayout({
