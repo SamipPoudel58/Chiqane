@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Teko } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Teko({ subsets: ['latin'] });
 
@@ -34,10 +35,10 @@ export default function RootLayout({
         href="/images/favicon.png"
         type="image/x-icon"
       />
-      <script async src="https://cdn.splitbee.io/sb.js"></script>
       <body className={inter.className}>
         <Header />
         {children}
+        <Analytics />
       </body>
     </html>
   );
