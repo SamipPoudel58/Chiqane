@@ -1,11 +1,11 @@
-import TrackWrapper from '@/components/track-wrapper';
+import Track from '@/components/track';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <main className="max-w-[1200px] mx-auto">
       <div className="flex flex-col-reverse xl:flex-row items-center gap-x-16 pt-8 lg:pt-16">
-        <TrackWrapper url="https://raw.githubusercontent.com/f1laps/f1-track-vectors/main/f1_2020/hungary.svg" />
+        <Track url="/tracks/mexico.png" />
 
         <div className="px-4 sm:px-8 xl:px-0">
           <div className="flex gap-x-4 leading-[0] items-center ">

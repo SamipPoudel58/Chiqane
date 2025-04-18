@@ -1,29 +1,20 @@
-'use client';
-import { useEffect, useState } from 'react';
+"use client";
 
-const Track = ({ url }: { url: string }) => {
-  const [svgTrack, setSvgTrack] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(url)
-      .then((data) => data.text())
-      .then((svg) => {
-        setSvgTrack(svg);
-        setLoading(false);
-      });
-  }, [url]);
-
-  return svgTrack ? (
-    <div
-      className={`${
-        loading ? 'opacity-5 transition-opacity duration-300' : 'opacity-100'
-      } trackSvg flex items-center justify-center h-full sm:h-[200px] w-full sm:w-[200px]`}
-      dangerouslySetInnerHTML={{ __html: svgTrack }}
-    ></div>
-  ) : (
-    <div></div>
+const Track = ({
+  url,
+  invertColor,
+}: {
+  url: string;
+  invertColor?: boolean;
+}) => {
+  return (
+    <div className="flex items-center justify-center bg-[url(/images/grid.png)] bg-center bg-contain bg-no-repeat h-[400px] md:h-[500px] w-full sm:w-[500px]">
+      <img
+        className={`max-w-[250px] ${invertColor ? "invert" : "invert"}`}
+        src={url}
+        alt="track"
+      />
+    </div>
   );
 };
 

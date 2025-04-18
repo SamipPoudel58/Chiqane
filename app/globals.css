@@ -45,12 +45,3 @@ body {
   }
 }
 
-svg .st0 {
-  stroke: white;
-}
-
-svg .st1,
-svg .st2,
-svg .st3 {
-  stroke: transparent;
-}

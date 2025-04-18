@@ -1,16 +1,17 @@
-'use client';
+"use client";
 
-import TrackWrapper from '@/components/track-wrapper';
-import { useEffect, useMemo, useState } from 'react';
+import Track from "@/components/track";
+import { useEffect, useMemo, useState } from "react";
 
 type Track = {
   name: string;
-  layout: string;
+  image: string;
+  invertColor?: boolean;
 };
 
 type Question = Track & {
   options: string[];
-  status?: 'success' | 'failure';
+  status?: "success" | "failure";
   selectedAnswer?: string;
 };
 
@@ -19,7 +20,7 @@ const TrackQuiz = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const activeQuestion = questions.at(-1) as Question;
   const score = questions.reduce(
-    (acc, curr) => (curr.status === 'success' ? acc + 1 : acc + 0),
+    (acc, curr) => (curr.status === "success" ? acc + 1 : acc + 0),
     0
   );
 
@@ -28,94 +29,30 @@ const TrackQuiz = () => {
 
   const TRACKS: Track[] = useMemo(
     () => [
-      {
-        name: 'Abu Dhabi',
-        layout: 'abudhabi',
-      },
-      {
-        name: 'Australia',
-        layout: 'australia',
-      },
-      {
-        name: 'Austria',
-        layout: 'austria',
-      },
-      {
-        name: 'Azerbaijan',
-        layout: 'azerbaijan',
-      },
-      {
-        name: 'Bahrain',
-        layout: 'bahrain',
-      },
-      {
-        name: 'Belgium',
-        layout: 'belgium',
-      },
-      {
-        name: 'Brazil',
-        layout: 'brazil',
-      },
-      {
-        name: 'Canada',
-        layout: 'canada',
-      },
-      {
-        name: 'China',
-        layout: 'china',
-      },
-      {
-        name: 'France',
-        layout: 'france',
-      },
-      {
-        name: 'Great Britain',
-        layout: 'greatbritain',
-      },
-      {
-        name: 'Hungary',
-        layout: 'hungary',
-      },
-      {
-        name: 'Italy',
-        layout: 'italy',
-      },
-      {
-        name: 'Japan',
-        layout: 'japan',
-      },
-      {
-        name: 'Mexico',
-        layout: 'mexico',
-      },
-      {
-        name: 'Monaco',
-        layout: 'monaco',
-      },
-      {
-        name: 'Netherlands',
-        layout: 'netherlands',
-      },
-      {
-        name: 'Russia',
-        layout: 'russia',
-      },
-      {
-        name: 'Singapore',
-        layout: 'singapore',
-      },
-      {
-        name: 'Spain',
-        layout: 'spain',
-      },
-      {
-        name: 'USA',
-        layout: 'usa',
-      },
-      {
-        name: 'Vietnam',
-        layout: 'vietnam',
-      },
+      { name: "Abu Dhabi", image: "abu-dhabi.png" },
+      { name: "Australia", image: "australia.png" },
+      { name: "Austria", image: "austria.png" },
+      { name: "Azerbaijan", image: "azerbaijan.png" },
+      { name: "Bahrain", image: "bahrain.png" },
+      { name: "Belgium", image: "belgium.png" },
+      { name: "Brazil", image: "brazil.png" },
+      { name: "Canada", image: "canada.png" },
+      { name: "China", image: "china.png" },
+      { name: "Emilia-Romagna", image: "emilia-romagna.png" },
+      { name: "Great Britain", image: "great-britain.png" },
+      { name: "Hungary", image: "hungary.png", invertColor:true},
+      { name: "Italy", image: "italy.png" },
+      { name: "Japan", image: "japan.png" },
+      { name: "Las Vegas", image: "las-vegas.png" },
+      { name: "Mexico", image: "mexico.png" },
+      { name: "Miami", image: "miami.png" },
+      { name: "Monaco", image: "monaco.png", invertColor:true },
+      { name: "Netherlands", image: "netherlands.png" },
+      { name: "Qatar", image: "qatar.png" },
+      { name: "Saudi Arabia", image: "saudi-arabia.png" },
+      { name: "Singapore", image: "singapore.png" },
+      { name: "Spain", image: "spain.png" },
+      { name: "United States", image: "united-states.png" },
     ],
     []
   );
@@ -200,12 +137,12 @@ const TrackQuiz = () => {
     if (ans === activeQuestion.name) {
       setQuestions([
         ...pastQuestions,
-        { ...activeQuestion, status: 'success', selectedAnswer: ans },
+        { ...activeQuestion, status: "success", selectedAnswer: ans },
       ]);
     } else {
       setQuestions([
         ...pastQuestions,
-        { ...activeQuestion, status: 'failure', selectedAnswer: ans },
+        { ...activeQuestion, status: "failure", selectedAnswer: ans },
       ]);
     }
 
@@ -244,8 +181,9 @@ const TrackQuiz = () => {
               </p>
             </div>
           ) : (
-            <TrackWrapper
-              url={`https://raw.githubusercontent.com/f1laps/f1-track-vectors/main/f1_2020/${activeQuestion.layout}.svg`}
+            <Track
+              url={`/tracks/${activeQuestion.image}`}
+              invertColor={activeQuestion.invertColor}
             />
           )}
           <div className="w-full xl:w-1/2 px-4 sm:px-8 xl:px-0">
@@ -301,10 +239,10 @@ const TrackQuiz = () => {
                       key={idx}
                       className={`${
                         opt === activeQuestion.selectedAnswer
-                          ? activeQuestion.status === 'success'
-                            ? 'border-emerald-500 text-emerald-500'
-                            : 'border-rose-600 text-rose-600'
-                          : 'border-slate-100 hover:border-slate-100/70 text-slate-100 hover:text-slate-100/70'
+                          ? activeQuestion.status === "success"
+                            ? "border-emerald-500 text-emerald-500"
+                            : "border-rose-600 text-rose-600"
+                          : "border-slate-100 hover:border-slate-100/70 text-slate-100 hover:text-slate-100/70"
                       } relative border-2 rounded text-2xl sm:text-3xl py-4 w-[48%] sm:w-[48%]`}
                     >
                       {opt}
@@ -313,12 +251,12 @@ const TrackQuiz = () => {
                         opt === activeQuestion.selectedAnswer && (
                           <div
                             className={`${
-                              activeQuestion.status === 'success'
-                                ? 'bg-emerald-500'
-                                : 'bg-rose-600'
+                              activeQuestion.status === "success"
+                                ? "bg-emerald-500"
+                                : "bg-rose-600"
                             } h-8 w-8 flex items-center justify-center rounded-full text-slate-100 absolute -top-2 -right-2`}
                           >
-                            {activeQuestion.status === 'success' ? (
+                            {activeQuestion.status === "success" ? (
                               <CheckMarkIcon />
                             ) : (
                               <XMarkIcon />
