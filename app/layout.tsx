@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Teko } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header';
+import ReliefBanner from '@/components/relief-banner';
 import { Analytics } from '@vercel/analytics/next';
 
 const inter = Teko({ subsets: ['latin'] });
@@ -36,6 +37,7 @@ export default function RootLayout({
         type="image/x-icon"
       />
       <body className={inter.className}>
+        <ReliefBanner />
         <Header />
         {children}
         <Analytics />
