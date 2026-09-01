@@ -7,10 +7,10 @@ const ReliefBanner = () => (
   >
     {/* pit-lane style diagonal stripes */}
     <span
-      className="pointer-events-none absolute inset-0 opacity-20"
+      className="pointer-events-none absolute inset-0 opacity-[0.12]"
       style={{
         backgroundImage:
-          'repeating-linear-gradient(115deg, transparent 0 14px, rgba(0,0,0,0.9) 14px 28px)',
+          'repeating-linear-gradient(115deg, transparent 0 14px, rgba(0,0,0,0.5) 14px 28px)',
       }}
       aria-hidden="true"
     />
